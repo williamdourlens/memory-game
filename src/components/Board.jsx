@@ -4,7 +4,7 @@ import Card from './Card';
 
 const Board = ({ cards, handleCardClick }) => {
   return (
-    <div className="board" style={{maxWidth: '800px'}}>
+    <div className="board" style={{maxWidth: '1000px'}}>
       {cards.map((card, index) => (
         <Card
           key={index}
