@@ -16,79 +16,7 @@ body {
     position: relative; 
 }
 
-body::before, 
-body::after {
-    content: "";
-    width: 70vmax;
-    height: 70vmax;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.07);
-    left: -20vmin;
-    top: -20vmin;
-    z-index: 1;
-    will-change: border-radius, transform;
-    transform-origin: 55% 55%;
-    pointer-events: none; 
-}
-    
-body::after {
-        width: 70vmin;
-        height: 70vmin;
-        left: auto;
-        right: -10vmin;
-        top: auto;
-        bottom: 0;
-        transform-origin: 20% 20%; 
-}
 
-@-webkit-keyframes Gradient {
-    0% {
-        background-position: 0 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0 50%
-    }
-}
-
-@-moz-keyframes Gradient {
-    0% {
-        background-position: 0 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0 50%
-    }
-}
-
-@keyframes Gradient {
-    0% {
-        background-position: 0 50%
-    }
-    50% {
-        background-position: 100% 50%
-    }
-    100% {
-        background-position: 0 50%
-    }
-}
-
-@keyframes morph {
-    0% {
-        border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; }
-    100% {
-        border-radius: 40% 60%; } 
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(1turn); 
-    } 
-}
 
 .bouton {
         background: -moz-linear-gradient(45deg, #ffa079 0%, #d911f2 29%, #26c9f2 66%, #02e1ba 100%);
