@@ -14,6 +14,7 @@ const MemoryGame = () => {
     setIsGameOver(false);
     setTimer(0);
     setScore(0);
+    settentatives(0);
 
     let initialCards = [];
     if (level === 1) {
