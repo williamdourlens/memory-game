@@ -14,7 +14,7 @@ const MemoryGame = () => {
     setIsGameOver(false);
     setTimer(0);
     setScore(0);
-    
+
     let initialCards = [];
     if (level === 1) {
       initialCards = [
@@ -80,6 +80,7 @@ const MemoryGame = () => {
 
   const [siPremiereCarte, setsiPremiereCarte] = useState(null);
   const [double, setdouble] = useState(0);
+  const [tentatives, settentatives] = useState(0);
 
   function shuffle(array) {
     const newArray = [...array];
@@ -97,6 +98,7 @@ const MemoryGame = () => {
     if (siPremiereCarte === null) {
       newCards[index].flipped = true;
       setsiPremiereCarte(index);
+      settentatives(tentatives + 1);
     } else {
       if (newCards[siPremiereCarte].image === newCards[index].image) {
         newCards[index].flipped = true;
@@ -150,8 +152,9 @@ const MemoryGame = () => {
       <button onClick={() => selectionNiveau(2)}>Medium</button>
       <button onClick={() => selectionNiveau(3)}>Hard</button>
       <button onClick={handleFlipAllCards}>Flip all cards</button>
-      <div style={{ fontSize: "3em" }}>Timer: {timer}</div>
-	  {isGameOver && <div style={{ fontSize: "2em" }}>Score: {score}</div>}
+      <div style={{ fontSize: "3em" }}>Timer : {timer}</div>
+      <div style={{ fontSize: "3em" }}>Tentatives : {tentatives}</div>
+	  {isGameOver && <div style={{ fontSize: "2em" }}>Score : {score}</div>}
     </div>
   );
 };
