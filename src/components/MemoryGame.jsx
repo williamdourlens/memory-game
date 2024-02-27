@@ -1,6 +1,7 @@
-// MemoryGame.js
+
 import React, { useState } from 'react';
 import Board from './Board';
+
 
 const MemoryGame = () => {
   const [cards, setCards] = useState(() => {
@@ -41,13 +42,18 @@ const MemoryGame = () => {
     newCards[index].flipped = !newCards[index].flipped;
     setCards(newCards);
   };
+  const handleFlipAllCards = () => {
+    const newCards = cards.map((card) => ({ ...card, flipped: !card.flipped }));
+    setCards(newCards);
+  }
 
   return (
     <div className="memory-game">
       <h1>Memory Game</h1>
-      <div className="card-row" >
+      <div className="card-row">
         <Board cards={cards} handleCardClick={handleCardClick} style={{ width: 50, height: 50 }} />
       </div>
+      <button onClick={handleFlipAllCards}>Flip all cards</button>
     </div>
   );
 };
