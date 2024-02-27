@@ -143,12 +143,16 @@ const MemoryGame = () => {
       <div className="card-row" style={{ display: 'flex', justifyContent: 'center' }}>
         <Board cards={cards} handleCardClick={handleCardClick} style={{ width: 50, height: 50 }} />
       </div>
+	  <div>
       <button onClick={() => selectionNiveau(1)} className='bouton'>Easy</button>
       <button onClick={() => selectionNiveau(2)} className='bouton'>Medium</button>
       <button onClick={() => selectionNiveau(3)} className='bouton'>Hard</button>
-      <div style={{ fontSize: "2em" }}>Timer : {timer}s</div>
-      <div style={{ fontSize: "2em" }}>Tries : {tentatives}</div>
+	  </div>
+	  <div>
+      <div style={{ fontSize: "2em",display:"inline-flex",margin:'0 10px' }}>Timer : {timer}s</div>
+      <div style={{ fontSize: "2em",display:"inline-flex" }}>Tries : {tentatives}</div>
 	  {isGameOver && <div style={{ fontSize: "2em" }}>Score : {score}</div>}
+	  </div>
     </div>
   );
 };
