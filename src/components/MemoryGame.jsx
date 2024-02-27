@@ -9,7 +9,12 @@ const MemoryGame = () => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [cards, setCards] = useState([]);
   const [score, setScore] = useState(0);
+
   const selectionNiveau = (level) => {
+    setIsGameOver(false);
+    setTimer(0);
+    setScore(0);
+    
     let initialCards = [];
     if (level === 1) {
       initialCards = [
@@ -134,15 +139,6 @@ const MemoryGame = () => {
 	  setScore(double * 100 - timer);
     }
   }, [cards]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer((prevTimer) => prevTimer + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
 
   return (
     <div className="memory-game">
