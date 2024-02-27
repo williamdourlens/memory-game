@@ -94,7 +94,7 @@ const MemoryGame = () => {
   return (
 	<div className="memory-game">
 	  <h1>Memory Game</h1>
-	  <div className="card-row">
+	  <div className="card-row" style={{ display: 'flex', justifyContent: 'center' }}>
 		<Board cards={cards} handleCardClick={handleCardClick} style={{ width: 50, height: 50 }} />
 	  </div>
 	  <button onClick={handleFlipAllCards}>Flip all cards</button>
