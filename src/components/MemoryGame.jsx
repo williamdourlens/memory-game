@@ -5,13 +5,22 @@ import Board from './Board';
 const MemoryGame = () => {
   const [cards, setCards] = useState(() => {
     const initialCards = [
-      { image: 'apple.jpg', flipped: false },
-      { image: 'poire.jpg', flipped: false },
-      { image: 'apple.jpg', flipped: false },
-      { image: 'poire.jpg', flipped: false },
-      { image: 'apple.jpg', flipped: false },
-      { image: 'poire.jpg', flipped: false },
-      { image: 'apple.jpg', flipped: false },
+      { image: 'pomme.png', flipped: false },
+      { image: 'pomme.png', flipped: false },
+      { image: 'poire.png', flipped: false },
+      { image: 'poire.png', flipped: false },
+      { image: 'orange.png', flipped: false },
+      { image: 'orange.png', flipped: false },
+      { image: 'citron.png', flipped: false },
+      { image: 'citron.png', flipped: false },
+      { image: 'peche.png', flipped: false },
+      { image: 'peche.png', flipped: false },
+      { image: 'kiwi.png', flipped: false },
+      { image: 'kiwi.png', flipped: false },
+      { image: 'cerise.png', flipped: false },
+      { image: 'cerise.png', flipped: false },
+      { image: 'banane.png', flipped: false },
+      { image: 'banane.png', flipped: false },
     ];
 
     const shuffledCards = shuffle(initialCards);
