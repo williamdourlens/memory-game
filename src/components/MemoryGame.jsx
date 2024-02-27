@@ -31,6 +31,9 @@ const MemoryGame = () => {
 	return shuffledCards;
   });
 
+  const [siPremiereCarte, setsiPremiereCarte] = useState(null);
+  const [double, setdouble] = useState(0);
+
   function shuffle(array) {
 	const newArray = [...array];
 	for (let i = newArray.length - 1; i > 0; i--) {
@@ -41,10 +44,35 @@ const MemoryGame = () => {
   }
 
   const handleCardClick = (index) => {
+<<<<<<< Updated upstream
 	const newCards = [...cards];
 	newCards[index].flipped = !newCards[index].flipped;
 	setCards(newCards);
+=======
+    const newCards = [...cards];
+    if (siPremiereCarte === null) {
+      newCards[index].flipped = true;
+      setsiPremiereCarte(index);
+    } else {
+      if (newCards[siPremiereCarte].image === newCards[index].image) {
+        newCards[index].flipped = true;
+        newCards[siPremiereCarte].flipped = true;
+        setdouble(double + 1);
+      } else {
+        newCards[index].flipped = true;
+        setTimeout(() => {
+          newCards[siPremiereCarte].flipped = false;
+          newCards[index].flipped = false;
+          setCards(newCards);
+        }, 1000);
+      }
+      setsiPremiereCarte(null);
+    }
+    setCards(newCards);
+>>>>>>> Stashed changes
   };
+
+  
   const handleFlipAllCards = () => {
 	const newCards = cards.map((card) => ({ ...card, flipped: !card.flipped }));
 	setCards(newCards);
