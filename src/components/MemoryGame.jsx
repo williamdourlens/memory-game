@@ -45,7 +45,9 @@ const MemoryGame = () => {
   return (
     <div className="memory-game">
       <h1>Memory Game</h1>
-      <Board cards={cards} handleCardClick={handleCardClick} />
+      <div className="card-row" >
+        <Board cards={cards} handleCardClick={handleCardClick} style={{ width: 50, height: 50 }} />
+      </div>
     </div>
   );
 };

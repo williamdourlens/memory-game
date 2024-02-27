@@ -4,7 +4,7 @@ import Card from './Card';
 
 const Board = ({ cards, handleCardClick }) => {
   return (
-    <div className="board">
+    <div className="board" >
       {cards.map((card, index) => (
         <Card
           key={index}
