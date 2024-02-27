@@ -6,7 +6,7 @@ const Card = ({ image, onClick, flipped }) => {
   
   return (
     <div onClick={onClick} style={{ display: 'inline', width:'100px',height:'100px', maxHeight:'100px', maxWidth:'100px'}}>
-      <img src={'../'+imageUrl} alt="Card" style={{width:'100px',height:'100px'}}/>
+      <img src={'../'+imageUrl} alt="Card" style={{width:'100px',height:'100px'}} draggable="false" />
     </div>
   );
 };
