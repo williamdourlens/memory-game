@@ -2,7 +2,7 @@
 import React from 'react';
 
 const Card = ({ image, onClick, flipped }) => {
-  const imageUrl = flipped ? image : '/intero.jpg';
+  const imageUrl = flipped ? image : '/intero.png';
   
   return (
     <div onClick={onClick} style={{ display: 'inline', width:'100px',height:'100px', maxHeight:'100px', maxWidth:'100px'}}>
