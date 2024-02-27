@@ -8,7 +8,7 @@ const MemoryGame = () => {
   const [timer, setTimer] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [cards, setCards] = useState([]);
-
+  const [score, setScore] = useState(0);
   const selectionNiveau = (level) => {
     let initialCards = [];
     if (level === 1) {
@@ -131,6 +131,7 @@ const MemoryGame = () => {
     if (allFlipped) {
       setIsGameOver(true);
       console.log('Game Over!');
+	  setScore(double * 100 - timer);
     }
   }, [cards]);
 
@@ -154,6 +155,7 @@ const MemoryGame = () => {
       <button onClick={() => selectionNiveau(3)}>Difficile</button>
       <button onClick={handleFlipAllCards}>Flip all cards</button>
       <div style={{ fontSize: "3em" }}>Timer: {timer}</div>
+	  {isGameOver && <div style={{ fontSize: "2em" }}>Score: {score}</div>}
     </div>
   );
 };
