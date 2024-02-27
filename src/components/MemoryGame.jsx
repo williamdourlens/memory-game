@@ -146,9 +146,9 @@ const MemoryGame = () => {
       <div className="card-row" style={{ display: 'flex', justifyContent: 'center' }}>
         <Board cards={cards} handleCardClick={handleCardClick} style={{ width: 50, height: 50 }} />
       </div>
-      <button onClick={() => selectionNiveau(1)}>Facile</button>
-      <button onClick={() => selectionNiveau(2)}>Moyen</button>
-      <button onClick={() => selectionNiveau(3)}>Difficile</button>
+      <button onClick={() => selectionNiveau(1)}>Easy</button>
+      <button onClick={() => selectionNiveau(2)}>Medium</button>
+      <button onClick={() => selectionNiveau(3)}>Hard</button>
       <button onClick={handleFlipAllCards}>Flip all cards</button>
       <div style={{ fontSize: "3em" }}>Timer: {timer}</div>
 	  {isGameOver && <div style={{ fontSize: "2em" }}>Score: {score}</div>}
