@@ -44,11 +44,6 @@ const MemoryGame = () => {
   }
 
   const handleCardClick = (index) => {
-<<<<<<< Updated upstream
-	const newCards = [...cards];
-	newCards[index].flipped = !newCards[index].flipped;
-	setCards(newCards);
-=======
     const newCards = [...cards];
     if (siPremiereCarte === null) {
       newCards[index].flipped = true;
@@ -69,7 +64,6 @@ const MemoryGame = () => {
       setsiPremiereCarte(null);
     }
     setCards(newCards);
->>>>>>> Stashed changes
   };
 
   
