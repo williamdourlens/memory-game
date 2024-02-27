@@ -118,12 +118,6 @@ const MemoryGame = () => {
     setCards(newCards);
   };
 
-
-  const handleFlipAllCards = () => {
-    const newCards = cards.map((card) => ({ ...card, flipped: !card.flipped }));
-    setCards(newCards);
-  }
-
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isGameOver) {
@@ -149,10 +143,9 @@ const MemoryGame = () => {
       <div className="card-row" style={{ display: 'flex', justifyContent: 'center' }}>
         <Board cards={cards} handleCardClick={handleCardClick} style={{ width: 50, height: 50 }} />
       </div>
-      <button onClick={() => selectionNiveau(1)}>Easy</button>
-      <button onClick={() => selectionNiveau(2)}>Medium</button>
-      <button onClick={() => selectionNiveau(3)}>Hard</button>
-      <button onClick={handleFlipAllCards}>Flip all cards</button>
+      <button onClick={() => selectionNiveau(1)} className='bouton'>Easy</button>
+      <button onClick={() => selectionNiveau(2)} className='bouton'>Medium</button>
+      <button onClick={() => selectionNiveau(3)} className='bouton'>Hard</button>
       <div style={{ fontSize: "2em" }}>Timer : {timer}s</div>
       <div style={{ fontSize: "2em" }}>Tries : {tentatives}</div>
 	  {isGameOver && <div style={{ fontSize: "2em" }}>Score : {score}</div>}
