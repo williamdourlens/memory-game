@@ -7,6 +7,7 @@ import Board from './Board';
 const MemoryGame = () => {
   const [timer, setTimer] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [score, setScore] = useState(0);
   const [cards, setCards] = useState(() => {
 	const initialCards = [
 	  { image: 'pomme.png', flipped: false },
@@ -86,6 +87,7 @@ const MemoryGame = () => {
 	const allFlipped = cards.every((card) => card.flipped);
 	if (allFlipped) {
 	  setIsGameOver(true);
+	  setScore(double * 100 - timer);
 	  console.log('Game Over!');
 	}
   }, [cards]);
@@ -99,6 +101,7 @@ const MemoryGame = () => {
 	  </div>
 	  <button onClick={handleFlipAllCards}>Flip all cards</button>
 	  <div style={{fontSize:"3em"}}>Timer: {timer}</div>
+	  {isGameOver && <div style={{ fontSize: "2em" }}>Score: {score}</div>}
 	</div>
   );
 };
